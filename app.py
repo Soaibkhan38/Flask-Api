@@ -7,7 +7,7 @@ app = Flask(__name__)
 ass=[]
 def urls(my_url):
     page = requests.get(my_url)
-    soup = BeautifulSoup(page.text, 'lxml')
+    soup = BeautifulSoup(page.text, 'html.parser')
     js_test = soup.find_all('a', class_='item')
     global ass
     ass=[]
