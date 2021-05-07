@@ -31,4 +31,14 @@ def hello_world():
 def scrape():
     url = request.args.get('url')
     urls(url)
-    return render_template("index.html", l=ass)
+    while not ass:
+        pass
+    global ass2
+    ass2 = []
+    for i in ass:
+    #print(i)
+        i = i.replace('https://', '')
+        klm = i.split('/')
+        #print(klm)
+        ass2.append(str(str(klm[-1].replace('?raw=true','')).replace('%20',' ')))
+    return render_template("index.html", lmn=dict(zip(ass, ass2)))
