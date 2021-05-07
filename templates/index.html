@@ -1,10 +1,12 @@
 <html>
+
 <head>
-<title>AniDL API</title>
+    <title>AniDL API</title>
 </head>
+
 <body>
-{% for e in l %}
-      <a href="{{e}}">{{e}}</a><br>
-    {% endfor %}
+    {% for e, f in zip(l, k) %}
+    <a href="{{e}}">{{f}}</a><br> {% endfor %}
 </body>
+
 </html>
