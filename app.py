@@ -38,7 +38,6 @@ def scrape():
     for i in ass:
     #print(i)
         i = i.replace('https://', '')
-        klm = i.split('/')
-        #print(klm)
-        ass2.append(str(str(klm[-1].replace('?raw=true','')).replace('%20',' ')))
+        klm = i.split('/')      
+        ass2.append(str(str(klm[-1].replace('?raw=true','')).replace('%20',' '))) if(str(klm[-1]) != "?raw=true") else ass2.append(str(str(klm[-2]).replace('%20',' ')))
     return render_template("index.html", lmn=dict(zip(ass, ass2)))
